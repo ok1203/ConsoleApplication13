@@ -35,12 +35,11 @@ public:
     {
         return &chain.back();
     }
-    Block printBlockchain(){
+    void printBlockchain(){
        // vector<Block>::iterator it_vec = chain.begin();
         for (auto it_vec = chain.begin(); it_vec != chain.end(); ++it_vec)
             cout << *it_vec <<' ';
     }
-
 
     bool isBlockchainValid() {
         auto iter = chain.begin();
