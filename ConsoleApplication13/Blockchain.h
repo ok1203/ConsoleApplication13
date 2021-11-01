@@ -34,5 +34,15 @@ public:
         return &chain.back();
     }
 
+    bool isBlockchainValid() {
+        auto iter = chain.begin();
+        while (iter != chain.end()) {
+            if (iter->generateHash() != iter->getBlockHash()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 };
 
