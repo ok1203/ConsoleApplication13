@@ -34,6 +34,13 @@ public:
         return &chain.back();
     }
 
+    void printBlockchain() {
+        auto iter = chain.begin();
+        while (iter != chain.end()) {
+
+        }
+    }
+
     bool isBlockchainValid() {
         auto iter = chain.begin();
         while (iter != chain.end()) {
