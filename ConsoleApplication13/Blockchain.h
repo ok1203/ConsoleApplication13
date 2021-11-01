@@ -2,6 +2,8 @@
 #include "Block.h"
 #include <vector>
 #include <time.h>
+#include <iostream>
+
 using namespace std;
 
 class Blockchain
@@ -32,6 +34,11 @@ public:
     Block* getLatestBlock()
     {
         return &chain.back();
+    }
+    void printBlockchain(){
+       // vector<Block>::iterator it_vec = chain.begin();
+        for (auto it_vec = chain.begin(); it_vec != chain.end(); ++it_vec)
+            cout << *it_vec <<' ';
     }
 
     void printBlockchain() {

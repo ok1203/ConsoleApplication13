@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "TransactionData.h"
+#include <iostream>
 using namespace std;
 class Block
 {
@@ -26,6 +27,11 @@ public:
     {
         return block_hash;
     }
+    friend std::ostream& operator<< (std::ostream& out, Block const& curr)
+    {
+        out << curr.block_hash;
+        return out;
+    };
 private:
     int index;
     TransactionData transaction_data;
