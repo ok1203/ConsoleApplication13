@@ -9,12 +9,6 @@ using namespace std;
 class Miner
 {
 public:
-	Miner() {};
-
-	void addwithout(TransactionData& data, Blockchain& blockchain) {
-		blockchain.addBlock(data);
-	}
-
 	void mine(TransactionData& data,  Blockchain& blockchain) {
 		srand(time(0));
 		int captcha = 1000 + (rand() % 1000);
