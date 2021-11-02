@@ -17,32 +17,24 @@ double getTotalVolume(Blockchain& chain) {
 
 int main()
 {
-    //std::cout << "Hello World!\n";
     Blockchain blockchain;
     blockchain.printBlockchain();
     time_t current;
     TransactionData tt1( 111, "Omar", "Meiram", time(&current));
     blockchain.addBlock(tt1);
     blockchain.addBlock(tt1);
-    blockchain.addBlock(tt1);
     blockchain.printBlockchain();
-    
-    time_t current2;
-    TransactionData tt2(1000, "Erzhan", "Damir", time(&current2));
-    Miner miner(blockchain);
+
+    TransactionData tt2(1000, "Yerzhan", "Damir", time(&current));
+    Miner miner = Miner();
     if (blockchain.isBlockchainValid()) {
         cout << "Rabotaet" << endl;
     }
-    miner.mine(tt2);
-    miner.mine(tt2);
-    miner.mine(tt2);
+    blockchain.printBlockchain();
+    miner.mine(tt2, blockchain);
+    miner.mine(tt2, blockchain);
+    miner.mine(tt2, blockchain);
     blockchain.printBlockchain();
     cout << getTotalVolume(blockchain) << endl;
 
-    //double getTotalVolume(Blockchain &chain){
-    //    return;
-    //}
-    //async();
-
 }
-
