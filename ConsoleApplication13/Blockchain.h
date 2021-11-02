@@ -2,6 +2,7 @@
 #include "Block.h"
 #include <vector>
 #include <time.h>
+#include <iomanip>
 #include <iostream>
 
 using namespace std;
@@ -38,8 +39,8 @@ public:
     }
     void printBlockchain(){
         for (auto it_vec = chain.begin(); it_vec != chain.end(); ++it_vec)
-            cout<<"Sender: "<<it_vec->getTransaction_data().senderKey<<" | "<<
-            " Receiver: "<<it_vec->getTransaction_data().receiverKey<<" | "<<" Amount: "<<it_vec->getTransaction_data().amount<<" | "<<
+            cout<<"Sender: "<<setw(10)<<it_vec->getTransaction_data().senderKey<<" | "<<
+            " Receiver: "<<setw(10)<<it_vec->getTransaction_data().receiverKey<<" | "<<" Amount: "<<setw(10)<<it_vec->getTransaction_data().amount<<" | "<<
             " Timestamp: "<<it_vec->getTransaction_data().timestamp<<" | "<<" Hash: "<<*it_vec<<endl;
     }
 

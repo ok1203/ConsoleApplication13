@@ -23,10 +23,11 @@ public:
 		cin >> input;
 		if (input == captcha) {
 			blockchain.addBlock(data);
-			cout << "gfhdshfdj" << endl;
+			cout << "Captcha is solved" << endl;
 		}
 		else {
 			mine(data, blockchain);
-		}
+      cout << "Captcha is not solved" << endl;
+    }
 	}
 };
