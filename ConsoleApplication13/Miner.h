@@ -1,5 +1,8 @@
 #pragma once
 #include "Blockchain.h"
+#include "Block.h"
+#include <time.h>
+#include <vector>
 #include <ctime>
 #include <iostream>
 using namespace std;
@@ -7,7 +10,17 @@ using namespace std;
 class Miner
 {
 public:
-	void mine(Blockchain blockchain, TransactionData data) {
+	Blockchain blockchain;
+
+	Miner(Blockchain blockchai) {
+		this->blockchain = blockchain;
+	};
+
+	void addwithout( TransactionData data) {
+		blockchain.addBlock(data);
+	}
+
+	void mine(TransactionData data) {
 		srand(time(0));
 		int captcha = 1000 + (rand() % 1000);
 		int input;
@@ -17,7 +30,7 @@ public:
 			blockchain.addBlock(data);
 		}
 		else {
-			mine(blockchain, data);
+			mine(data);
 		}
 	}
 };

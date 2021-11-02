@@ -32,6 +32,10 @@ public:
         out << curr.block_hash;
         return out;
     };
+
+    TransactionData getTransaction_data() {
+        return transaction_data;
+    }
 private:
     int index;
     TransactionData transaction_data;
