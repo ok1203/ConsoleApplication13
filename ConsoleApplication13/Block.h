@@ -27,7 +27,7 @@ public:
     {
         return block_hash;
     }
-    friend std::ostream& operator<< (std::ostream& out, Block const& curr)
+    friend std::ostream& operator<< (std::ostream& out, Block const& curr )
     {
         out << curr.block_hash;
         return out;

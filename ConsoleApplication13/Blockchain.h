@@ -38,8 +38,9 @@ public:
     void printBlockchain(){
        // vector<Block>::iterator it_vec = chain.begin();
         for (auto it_vec = chain.begin(); it_vec != chain.end(); ++it_vec)
-            cout << it_vec->getTransaction_data().amount <<' ' << it_vec->getTransaction_data().timestamp << endl;
+            cout << it_vec->getTransaction_data().amount <<' ' << it_vec->getTransaction_data().timestamp << ' ' << it_vec->getBlockHash() << endl;
     }
+
 
     bool isBlockchainValid() {
         for (auto iter = chain.begin(); iter != chain.end(); ++iter) {
@@ -48,6 +49,7 @@ public:
             }
         }
         return true;
+
     }
 
 };

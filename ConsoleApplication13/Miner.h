@@ -12,11 +12,11 @@ class Miner
 public:
 	Blockchain blockchain;
 
-	Miner(Blockchain blockchai) {
+	Miner(Blockchain blockchain) {
 		this->blockchain = blockchain;
 	};
 
-	void addwithout( TransactionData data) {
+	void addWithout( TransactionData data) {
 		blockchain.addBlock(data);
 	}
 

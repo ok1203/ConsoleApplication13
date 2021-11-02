@@ -11,7 +11,7 @@ public:
 		this->receiverKey = receiverKey;
 		this->timestamp = timestamp;
 	}
-	TransactionData() {};
+    TransactionData(){};
 
 	double amount;
 	string senderKey;
