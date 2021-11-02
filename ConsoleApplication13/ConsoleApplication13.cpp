@@ -4,6 +4,8 @@
 #include "Miner.h"
 #include <thread>
 
+using namespace std;
+
 double getTotalVolume(Blockchain& chain) {
     double total = 0;
     for (auto iter = chain.chain.begin(); iter != chain.chain.end(); ++iter) {
@@ -11,6 +13,7 @@ double getTotalVolume(Blockchain& chain) {
     }
     return total;
 }
+
 
 int main()
 {
