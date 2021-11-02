@@ -17,8 +17,10 @@ int main()
     if (blockchain.isBlockchainValid()) {
         cout << "Rabotaet" << endl;
     }
-    miner.addwithout(tt2, blockchain);
-
+    blockchain.printBlockchain();
+    miner.mine(tt2, blockchain);
+    miner.mine(tt2, blockchain);
+    miner.mine(tt2, blockchain);
     blockchain.printBlockchain();
 
 }
