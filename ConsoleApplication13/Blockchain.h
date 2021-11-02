@@ -30,6 +30,7 @@ public:
         size_t previousHash = getLatestBlock()->getBlockHash();
         Block newBlock(index, data, previousHash);
         chain.push_back(newBlock);
+        cout << "success" << endl;
     }
     Block* getLatestBlock()
     {

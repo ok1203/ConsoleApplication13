@@ -2,6 +2,16 @@
 #include <future>
 #include "Blockchain.h"
 #include "Miner.h"
+#include <thread>
+
+double getTotalVolume(Blockchain& chain) {
+    double total = 0;
+    for (auto iter = chain.chain.begin(); iter != chain.chain.end(); ++iter) {
+        total = total + iter->getTransaction_data().amount;
+    }
+    return total;
+}
+
 int main()
 {
     //std::cout << "Hello World!\n";
@@ -20,10 +30,11 @@ int main()
     if (blockchain.isBlockchainValid()) {
         cout << "Rabotaet" << endl;
     }
-    miner.addwithout(tt2);
-    miner.addwithout(tt2);
-    miner.addwithout(tt2);
+    miner.mine(tt2);
+    miner.mine(tt2);
+    miner.mine(tt2);
     blockchain.printBlockchain();
+    cout << getTotalVolume(blockchain) << endl;
 
     //double getTotalVolume(Blockchain &chain){
     //    return;
@@ -31,3 +42,4 @@ int main()
     //async();
 
 }
+

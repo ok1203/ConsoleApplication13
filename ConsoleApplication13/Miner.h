@@ -12,7 +12,7 @@ class Miner
 public:
 	Blockchain blockchain;
 
-	Miner(Blockchain blockchai) {
+	Miner(Blockchain blockchain) {
 		this->blockchain = blockchain;
 	};
 
@@ -28,9 +28,11 @@ public:
 		cin >> input;
 		if (input == captcha) {
 			blockchain.addBlock(data);
+			cout << "gfhdshfdj" << endl;
 		}
 		else {
 			mine(data);
+			cout << "no not working" << endl;
 		}
 	}
 };
