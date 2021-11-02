@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <future>
 #include <mutex>
 #include "Blockchain.h"
 #include "Miner.h"
@@ -31,7 +32,7 @@ void func(Miner& miner, TransactionData& tt, Blockchain& blockchain) {
 int main()
 {
   Blockchain blockchain;
-  blockchain.printBlockchain();
+  future<double> res = async(launch::deferred, getTotalVolume, ref(blockchain));
   time_t current;
   TransactionData tt1( 111, "Omar", "Meiram", time(&current));
   TransactionData tt2(1000, "Yerzhan", "Damir", time(&current));
@@ -46,9 +47,11 @@ int main()
   thread2.join();
   blockchain.printBlockchain();
 
+
   if (blockchain.isBlockchainValid()) {
     cout << "Rabotaet" << endl;
   }
+  cout << res.get() << endl;
   cout << getTotalVolume(blockchain) << endl;
 
 }
